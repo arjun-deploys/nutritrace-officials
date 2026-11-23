@@ -1,0 +1,23 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#1f6b4f" />
+    <meta name="description" content="NutriTrace — school nutrition supply chain intelligence, powered by StaTwig." />
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <title>NutriTrace — demo</title>
+  </head>
+  <body>
+    <div id="root"></div>
+    <div id="demo-splash" style="position:fixed;inset:0;display:grid;place-items:center;font-family:system-ui,sans-serif;background:#f5f7f6;color:#17212b">
+      <div style="text-align:center;max-width:28rem;padding:1.5rem">
+        <p style="font-weight:600;font-size:1.25rem;margin:0">NutriTrace</p>
+        <p style="color:#5b6b66;margin:.5rem 0 1rem">Simulating three weeks of a state school-meal programme — every lot, truck, kitchen and meal…</p>
+        <div style="height:6px;border-radius:9999px;background:#dce3e0;overflow:hidden"><div style="height:100%;width:40%;background:#1f6b4f;border-radius:9999px;animation:nt 1.2s ease-in-out infinite alternate"></div></div>
+      </div>
+      <style>@keyframes nt{from{margin-left:0}to{margin-left:60%}}</style>
+    </div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>

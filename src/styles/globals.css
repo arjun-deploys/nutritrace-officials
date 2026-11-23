@@ -1,0 +1,189 @@
+@import 'tailwindcss';
+@import 'tw-animate-css';
+@import '@fontsource-variable/noto-sans';
+@import '@fontsource/noto-sans-tamil/400.css';
+@import '@fontsource/noto-sans-tamil/600.css';
+@import '@fontsource/noto-sans-devanagari/400.css';
+@import '@fontsource/noto-sans-devanagari/600.css';
+
+@custom-variant dark (&:is(.dark *));
+
+/*
+ * NutriTrace design tokens.
+ * Leaf  — primary actions and "delivered" states (banana-leaf green of a South Indian meal).
+ * Turmeric — reserved for traceability: the custody ribbon, trace highlights, lot codes.
+ * Paper — cool green-grey page background; white surfaces for data.
+ * Stage ramp — grain brown → leaf green, the colour of food moving from source to plate.
+ */
+:root {
+  --radius: 0.5rem;
+  --background: #f5f7f6;
+  --foreground: #17212b;
+  --card: #ffffff;
+  --card-foreground: #17212b;
+  --popover: #ffffff;
+  --popover-foreground: #17212b;
+  --primary: #1f6b4f;
+  --primary-foreground: #ffffff;
+  --secondary: #e8eeeb;
+  --secondary-foreground: #17212b;
+  --muted: #eef2f0;
+  --muted-foreground: #5b6b66;
+  --accent: #e6efe9;
+  --accent-foreground: #133d2e;
+  --destructive: #b42318;
+  --border: #dce3e0;
+  --input: #cdd6d2;
+  --ring: #1f6b4f;
+  --trace: #d99a1e;
+  --trace-soft: #fbf1dc;
+  --trace-ink: #7a520c;
+  --success: #1f7a4d;
+  --success-soft: #e3f2ea;
+  --warning: #a8670f;
+  --warning-soft: #fcf0dc;
+  --danger: #b42318;
+  --danger-soft: #fde7e5;
+  --info: #23639e;
+  --info-soft: #e4eef8;
+  --stage-source: #8a6a2f;
+  --stage-warehouse: #a87a1e;
+  --stage-distribution: #8b8a2c;
+  --stage-kitchen: #5e8c3a;
+  --stage-school: #2f7a55;
+  --stage-meal: #1f6b4f;
+  --chart-1: #1f6b4f;
+  --chart-2: #d99a1e;
+  --chart-3: #23639e;
+  --chart-4: #8a6a2f;
+  --chart-5: #b42318;
+  --sidebar: #12302a;
+  --sidebar-foreground: #d7e4de;
+  --sidebar-primary: #d99a1e;
+  --sidebar-primary-foreground: #12302a;
+  --sidebar-accent: #1c443a;
+  --sidebar-accent-foreground: #ffffff;
+  --sidebar-border: #234d42;
+  --sidebar-ring: #d99a1e;
+}
+
+.dark {
+  --background: #0f1714;
+  --foreground: #e4ebe8;
+  --card: #15201c;
+  --card-foreground: #e4ebe8;
+  --popover: #18241f;
+  --popover-foreground: #e4ebe8;
+  --primary: #4fae84;
+  --primary-foreground: #0b1410;
+  --secondary: #1d2a25;
+  --secondary-foreground: #e4ebe8;
+  --muted: #1b2622;
+  --muted-foreground: #93a59e;
+  --accent: #1f2f29;
+  --accent-foreground: #e4ebe8;
+  --destructive: #f0645a;
+  --border: #26352f;
+  --input: #2f3f38;
+  --ring: #4fae84;
+  --trace: #e8b24a;
+  --trace-soft: #3a2d12;
+  --trace-ink: #f3cd80;
+  --success: #4fae84;
+  --success-soft: #16312a;
+  --warning: #e8b24a;
+  --warning-soft: #33280f;
+  --danger: #f0645a;
+  --danger-soft: #3a1714;
+  --info: #6aa8e0;
+  --info-soft: #14283b;
+  --sidebar: #0b1311;
+  --sidebar-foreground: #c5d4ce;
+  --sidebar-accent: #17241f;
+  --sidebar-border: #1d2b26;
+}
+
+@theme inline {
+  --font-sans: 'Noto Sans Variable', 'Noto Sans Tamil', 'Noto Sans Devanagari', system-ui, sans-serif;
+  --radius-sm: calc(var(--radius) - 3px);
+  --radius-md: calc(var(--radius) - 1px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-trace: var(--trace);
+  --color-trace-soft: var(--trace-soft);
+  --color-trace-ink: var(--trace-ink);
+  --color-success: var(--success);
+  --color-success-soft: var(--success-soft);
+  --color-warning: var(--warning);
+  --color-warning-soft: var(--warning-soft);
+  --color-danger: var(--danger);
+  --color-danger-soft: var(--danger-soft);
+  --color-info: var(--info);
+  --color-info-soft: var(--info-soft);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  html {
+    -webkit-text-size-adjust: 100%;
+  }
+  body {
+    @apply bg-background text-foreground antialiased;
+    font-feature-settings: 'tnum' 0;
+  }
+  h1, h2, h3 {
+    text-wrap: balance;
+  }
+  :focus-visible {
+    outline: 2px solid var(--ring);
+    outline-offset: 2px;
+  }
+  @media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+      animation-duration: 0.01ms !important;
+      transition-duration: 0.01ms !important;
+    }
+  }
+}
+
+@utility num {
+  font-variant-numeric: tabular-nums;
+}
+@utility code-id {
+  font-variant-numeric: tabular-nums;
+  letter-spacing: 0.01em;
+  font-weight: 600;
+}
